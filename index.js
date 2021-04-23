@@ -47,7 +47,6 @@ function isNotMention(match) {
     for(let i = 0; i < match.length; i++) {
         const converted = parseInt(match[i]);
 
-<<<<<<< HEAD
         if(isNaN(converted)) return false;
     }
 
@@ -55,6 +54,4 @@ function isNotMention(match) {
 }
 
 
-=======
->>>>>>> d8a6eb1650a6a2f34c507b92398f42a18f00335f
 client.login(config.BOT_TOKEN);
