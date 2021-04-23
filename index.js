@@ -13,7 +13,7 @@ client.on("message", function(message) {
     if (!message.content.startsWith(prefix)) {
         handleEmojis(message);       
     } else {
-       handleCommand(message);
+        handleCommand(message);
     }
 });
 
