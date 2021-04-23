@@ -1,6 +1,5 @@
 const Discord = require("discord.js");
 const config = require("./config.js");
-const http = require("http")
 
 const client = new Discord.Client();
 
@@ -29,18 +28,30 @@ function handleCommand(message) {
 }
 
 function handleEmojis(message) {
+    console.log(message)
     if(!enabled) return;
     const content = message.content;
+    console.log(content)
 
     const match = content.match(emojiRegex)
+    console.log("match:",match)
 
     if (!match) return;
+
+    if(isNotMention(match)) return;
 
     message.delete();
 }
 
+function isNotMention(match) {
+    for(let i = 0; i < match.length; i++) {
+        const converted = parseInt(match[i]);
+
+        if(isNaN(converted)) return false;
+    }
+
+    return true;
+}
+
 
 client.login(config.BOT_TOKEN);
-
-// fix heroku port
-http.createServer(onRequest).listen(process.env.PORT || 6000)
