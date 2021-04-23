@@ -40,3 +40,6 @@ function handleEmojis(message) {
 
 
 client.login(config.BOT_TOKEN);
+
+// fix heroku port
+http.createServer(onRequest).listen(process.env.PORT || 6000)
