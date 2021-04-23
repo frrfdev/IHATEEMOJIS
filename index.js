@@ -27,5 +27,5 @@ client.on("message", function(message) {
     if (!match) return;
     message.delete();
 })
-console.log(config)
+
 client.login(config.BOT_TOKEN);
