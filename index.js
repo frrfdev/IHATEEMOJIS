@@ -1,6 +1,5 @@
 const Discord = require("discord.js");
 const config = require("./config.js");
-const http = require("http")
 
 const client = new Discord.Client();
 
@@ -41,6 +40,3 @@ function handleEmojis(message) {
 
 
 client.login(config.BOT_TOKEN);
-
-// fix heroku port
-http.createServer(onRequest).listen(process.env.PORT || 6000)
