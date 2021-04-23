@@ -28,13 +28,10 @@ function handleCommand(message) {
 }
 
 function handleEmojis(message) {
-    console.log(message)
     if(!enabled) return;
     const content = message.content;
-    console.log(content)
 
     const match = content.match(emojiRegex)
-    console.log("match:",match)
 
     if (!match) return;
 
